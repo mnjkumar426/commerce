@@ -41,6 +41,7 @@ export default function Home({
   return (
     <>
       <Grid variant="filled">
+        <h1>Hpme page</h1>
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
             key={product.id}
