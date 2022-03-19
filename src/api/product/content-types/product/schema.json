@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "colors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::color.color",
+      "inversedBy": "products"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "salePrice": {
+      "type": "decimal"
+    },
+    "saleType": {
+      "type": "enumeration",
+      "enum": [
+        "fixed",
+        "percent"
+      ]
+    },
+    "sku": {
+      "type": "string"
+    },
+    "newArrival": {
+      "type": "boolean"
+    },
+    "banner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::banner.banner",
+      "inversedBy": "products"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "fabric": {
+      "type": "richtext"
+    },
+    "additionalInfo": {
+      "type": "richtext"
+    },
+    "maintenance": {
+      "type": "richtext"
+    },
+    "returnPolicy": {
+      "type": "richtext"
+    },
+    "qty": {
+      "type": "integer",
+      "required": true
+    },
+    "price_range_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::price-range.price-range"
+    },
+    "hoverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

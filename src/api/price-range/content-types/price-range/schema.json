@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "price_ranges",
+  "info": {
+    "singularName": "price-range",
+    "pluralName": "price-ranges",
+    "displayName": "PriceRange",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
